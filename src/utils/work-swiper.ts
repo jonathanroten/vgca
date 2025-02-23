@@ -6,8 +6,8 @@ export const initWorkSwiper = () => {
   const swiper = new Swiper('.cms_related-work_wrap.swiper', {
     modules: [Navigation],
     slidesPerView: 2,
-    spaceBetween: '16px',
-    speed: 300,
+    spaceBetween: '24px',
+    speed: 500,
     navigation: {
       nextEl: '.swiper_btn.is-next',
       prevEl: '.swiper_btn.is-prev',
