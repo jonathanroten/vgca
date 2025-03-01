@@ -13,7 +13,7 @@ const ENTRY_POINTS = [
   'src/about.ts',
   'src/global.ts',
   'src/expertise.ts',
-  'src/articles.ts',
+  'src/articles-template.ts',
   'src/styles/main.css',
 ];
 
