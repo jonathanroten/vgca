@@ -8,7 +8,7 @@ const BUILD_DIRECTORY = 'dist';
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
 // Config entrypoint files
-const ENTRY_POINTS = ['src/index.ts', 'src/about.ts', 'src/styles/main.css'];
+const ENTRY_POINTS = ['src/index.ts', 'src/about.ts', 'src/global.ts', 'src/styles/main.css'];
 
 // Config dev serving
 const LIVE_RELOAD = !PRODUCTION;
