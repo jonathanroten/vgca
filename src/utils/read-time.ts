@@ -8,5 +8,5 @@ export const initReadTime = () => {
   const text = source.innerText;
   const words = text.trim().split(/\s+/).length;
   const estimate = Math.ceil(words / WORDSPERMINUTE);
-  target.innerText = `${estimate.toString()} min read`;
+  target.innerText = `${estimate.toString()} Min. Read`;
 };
