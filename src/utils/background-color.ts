@@ -1,7 +1,7 @@
 //Changes the background color of the .section_project-listing_wrap element to the color specified in the color parameter.
 
 export const initBackgroundColor = () => {
-  const projectWrap = document.querySelector('data-background-element="target"') as HTMLElement;
+  const projectWrap = document.querySelector('[data-background-element="target"]') as HTMLElement;
   const projectItems = document.querySelectorAll('[data-background-element="source"]');
   const defaultBackground = window.getComputedStyle(projectWrap).backgroundColor;
 
