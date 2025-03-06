@@ -13,7 +13,6 @@ export const initBackgroundColor = () => {
       item.addEventListener('mouseenter', function () {
         projectWrap.style.backgroundColor = backgroundColor;
       });
-      // When mouse leaves, reset the background (or set it to a default value)
       item.addEventListener('mouseleave', function () {
         projectWrap.style.backgroundColor = defaultBackground;
       });
