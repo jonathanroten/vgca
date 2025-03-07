@@ -24,17 +24,18 @@ export const initCardAnimation = () => {
           paused: true,
           defaults: {
             duration: 0.3,
-            ease: 'power1',
+            ease: 'power1.out',
           },
         });
 
         projectAnimationTimeline
           .fromTo(TitleElement, { y: 26 }, { y: 0 })
-          .fromTo(textElement, { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, '<')
+          .fromTo(textElement, { opacity: 0, y: 26 }, { opacity: 1, y: 0 }, '-=0.2')
           .fromTo(
             sectionElement,
             { backgroundColor: defaultBackground },
-            { backgroundColor: backgroundColor }
+            { backgroundColor: backgroundColor },
+            '-=0.1'
           );
 
         const handleMouseEnter = () => projectAnimationTimeline.play();
