@@ -1,6 +1,6 @@
-import { initBackgroundColor } from './utils/background-color';
+import { initCardAnimation } from '$utils/card-animation';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  initBackgroundColor();
+  initCardAnimation();
 });
