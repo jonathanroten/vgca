@@ -1,21 +1,48 @@
 //Changes the background color of the .section_project-listing_wrap element to the color specified in the color parameter.
+import { gsap } from 'gsap';
+export const initBackgroundAnimation = () => {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const sourceElements = document.querySelectorAll('[data-animation-element="background-source"]');
+  const targetElement = document.querySelector(
+    '[data-animation-element="background-target"]'
+  ) as HTMLElement;
 
-export const initBackgroundColor = () => {
-  const projectWrap = document.querySelector('[data-background-element="target"]') as HTMLElement;
-  const projectItems = document.querySelectorAll('[data-background-element="source"]');
-  const defaultBackground = window.getComputedStyle(projectWrap).backgroundColor;
+  if (!isTouchDevice && targetElement && sourceElements.length > 0) {
+    sourceElements.forEach((ele) => {
+      const projectEmbed = ele.querySelector('[data-background-color]') as HTMLElement;
 
-  projectItems.forEach((item) => {
-    const projectEmbed = item?.querySelector('[data-background-color]') as HTMLElement;
-    const backgroundColor = projectEmbed?.getAttribute('data-background-color');
+      const defaultBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue(
+        '--swatch--dark'
+      );
+      const newBackgroundColor =
+        projectEmbed.getAttribute('data-background-color') || defaultBackgroundColor;
 
-    if (projectWrap && projectItems && projectEmbed && backgroundColor) {
-      item.addEventListener('mouseenter', function () {
-        projectWrap.style.backgroundColor = backgroundColor;
-      });
-      item.addEventListener('mouseleave', function () {
-        projectWrap.style.backgroundColor = defaultBackground;
-      });
-    }
-  });
+      if (projectEmbed && newBackgroundColor) {
+        const backgroundAnimationTimeline = gsap.timeline({
+          paused: true,
+          duration: 0.2,
+          ease: 'power1.inOut',
+          delay: 0.2,
+        });
+
+        backgroundAnimationTimeline.fromTo(
+          targetElement,
+          { backgroundColor: defaultBackgroundColor },
+          { backgroundColor: newBackgroundColor }
+        );
+
+        const handleMouseEnter = () => {
+          backgroundAnimationTimeline.kill();
+          backgroundAnimationTimeline.play();
+        };
+        const handleMouseLeave = () => {
+          backgroundAnimationTimeline.kill();
+          backgroundAnimationTimeline.reverse();
+        };
+
+        ele.addEventListener('mouseenter', handleMouseEnter);
+        ele.addEventListener('mouseleave', handleMouseLeave);
+      }
+    });
+  }
 };
