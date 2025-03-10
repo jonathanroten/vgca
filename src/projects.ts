@@ -1,8 +1,8 @@
 import { initBackgroundAnimation } from '$utils/background-animtaion';
-import { initStickyPanels } from '$utils/sticky-animations';
+import { initFeaturedProjects } from '$utils/featured-project-animations';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
   initBackgroundAnimation();
-  initStickyPanels();
+  initFeaturedProjects();
 });

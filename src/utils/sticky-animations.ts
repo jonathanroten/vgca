@@ -15,7 +15,6 @@ export const initStickyPanels = () => {
           trigger: panel,
           start: 'bottom -50%',
           scrub: true,
-          //markers: true,
         },
       });
 
