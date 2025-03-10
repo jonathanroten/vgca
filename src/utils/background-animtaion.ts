@@ -11,11 +11,10 @@ export const initBackgroundAnimation = () => {
     sourceElements.forEach((ele) => {
       const projectEmbed = ele.querySelector('[data-background-color]') as HTMLElement;
 
-      const defaultBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue(
-        '--swatch--dark'
-      );
-      const newBackgroundColor =
-        projectEmbed.getAttribute('data-background-color') || defaultBackgroundColor;
+      //const defaultBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue(
+      // '--swatch--dark'
+      // );
+      const newBackgroundColor = projectEmbed.getAttribute('data-background-color') || undefined;
 
       if (projectEmbed && newBackgroundColor) {
         const backgroundAnimationTimeline = gsap.timeline({
@@ -25,11 +24,7 @@ export const initBackgroundAnimation = () => {
           delay: 0.2,
         });
 
-        backgroundAnimationTimeline.fromTo(
-          targetElement,
-          { backgroundColor: defaultBackgroundColor },
-          { backgroundColor: newBackgroundColor }
-        );
+        backgroundAnimationTimeline.to(targetElement, { backgroundColor: newBackgroundColor });
 
         const handleMouseEnter = () => {
           backgroundAnimationTimeline.kill();
