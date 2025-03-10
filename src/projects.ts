@@ -1,10 +1,8 @@
-import { initBackgroundAnimation } from '$utils/background-color';
-//import { initCardAnimation } from '$utils/card-animation';
+import { initBackgroundAnimation } from '$utils/background-animtaion';
 import { initStickyPanels } from '$utils/sticky-animations';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  //initCardAnimation();
   initBackgroundAnimation();
   initStickyPanels();
 });
