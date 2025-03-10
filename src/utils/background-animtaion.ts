@@ -10,10 +10,6 @@ export const initBackgroundAnimation = () => {
   if (!isTouchDevice && targetElement && sourceElements.length > 0) {
     sourceElements.forEach((ele) => {
       const projectEmbed = ele.querySelector('[data-background-color]') as HTMLElement;
-
-      //const defaultBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue(
-      // '--swatch--dark'
-      // );
       const newBackgroundColor = projectEmbed.getAttribute('data-background-color') || undefined;
 
       if (projectEmbed && newBackgroundColor) {
