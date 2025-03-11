@@ -6,5 +6,5 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   initWorkSwiper();
   initStickyPanels();
-  // initExpertiseSwiper();
+  //initExpertiseSwiper();
 });
