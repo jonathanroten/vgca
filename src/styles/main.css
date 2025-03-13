@@ -4,9 +4,10 @@
 @import "swiper/css/effect-creative";
 @import "swiper/css/autoplay";
 
-
+/* SWIPER */
 .swiper-button-disabled {
     color: color-mix(in srgb, var(--_theme---text) 60%, transparent) !important;
+    
 }
 
 /* CONVO SWIPER */
