@@ -1,5 +1,5 @@
-import { initBackgroundAnimation } from '$utils/background-animtaion';
-import { initFeaturedProjects } from '$utils/featured-project-animations';
+import { initBackgroundAnimation } from '$utils/gsap-background';
+import { initFeaturedProjects } from '$utils/gsap-featured-projects';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
