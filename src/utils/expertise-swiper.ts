@@ -2,18 +2,22 @@ import Swiper from 'swiper';
 import { EffectCreative, Navigation } from 'swiper/modules';
 
 export const initExpertiseSwiper = () => {
-  const swiperInstances = document.querySelectorAll('[data-swiper-element="instance"]'); // Fixed selector
+  const swiperInstances = document.querySelectorAll('[data-swiper-element="expertise-instance"]');
 
   swiperInstances.forEach((instance, index) => {
-    (instance as HTMLElement).dataset.swiperElement += `-${index}`;
-    const currentInstance = (instance as HTMLElement).dataset.swiperElement; // Scoped variable
-    const swiperContainer = document.querySelector(
-      `[data-swiper-element="${currentInstance}"] .swiper`
-    ) as HTMLElement; // Scoped selection
+    const instanceSwiper = instance.querySelector('.swiper');
 
-    if (!swiperContainer) return; // Prevent errors if no valid container is found
+    const instanceNext = instance.querySelector('[data-swiper-element="next"]') as HTMLElement;
+    instanceNext?.setAttribute('data-swiper-element', `next-${index}`);
 
-    new Swiper(swiperContainer, {
+    const instancePrev = instance.querySelector('[data-swiper-element="prev"]') as HTMLElement;
+    instanceNext?.setAttribute('data-swiper-element', `prev-${index}`);
+
+    if (!instanceSwiper || !instanceNext || !instancePrev) {
+      return;
+    }
+
+    new Swiper(instanceSwiper as HTMLElement, {
       modules: [Navigation, EffectCreative],
       effect: 'creative',
       grabCursor: true,
@@ -32,8 +36,8 @@ export const initExpertiseSwiper = () => {
       slidesPerView: 1,
       speed: 500,
       navigation: {
-        nextEl: instance.querySelector('.swiper_btn.is-next') as HTMLElement,
-        prevEl: instance.querySelector('.swiper_btn.is-prev') as HTMLElement,
+        nextEl: instanceNext,
+        prevEl: instancePrev,
       },
     });
   });

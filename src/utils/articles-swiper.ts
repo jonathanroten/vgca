@@ -3,14 +3,14 @@ import { Navigation } from 'swiper/modules';
 
 export const initArticlesSwiper = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const swiper = new Swiper('.cms_articles_wrap.swiper', {
+  const swiper = new Swiper('[data-swiper-element="articles-instance"]', {
     modules: [Navigation],
     slidesPerView: 3,
-    spaceBetween: '16px',
+    spaceBetween: 16,
     speed: 300,
     navigation: {
-      nextEl: '.swiper_btn.is-next',
-      prevEl: '.swiper_btn.is-prev',
+      nextEl: '[data-swiper-element="next"]',
+      prevEl: '[data-swiper-element="prev"]',
     },
   });
 };

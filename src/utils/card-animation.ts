@@ -20,16 +20,20 @@ export const initCardAnimation = () => {
           },
         });
 
+        gsap.set(titleElement, { y: '2rem' });
+        gsap.set(textElement, { opacity: 0, y: '1rem' });
+        gsap.set(visualElement, { transform: 'scale(1)' });
+
         cardAnimationTimeline
-          .fromTo(titleElement, { y: '2rem' }, { y: 0 })
-          .fromTo(textElement, { opacity: 0, y: '1rem' }, { opacity: 1, y: 0 }, '<')
-          .fromTo(visualElement, { transform: 'scale(1)' }, { transform: 'scale(1.03)' }, '<');
+          .to(titleElement, { y: 0 })
+          .to(textElement, { opacity: 1, y: 0 }, '<')
+          .to(visualElement, { transform: 'scale(1.03)' }, '<');
 
-        const handleMouseEnter = () => cardAnimationTimeline.play();
-        const handleMouseLeave = () => cardAnimationTimeline.reverse();
+        const playAnimation = () => cardAnimationTimeline.play();
+        const reverseAnimation = () => cardAnimationTimeline.reverse();
 
-        ele.addEventListener('mouseenter', handleMouseEnter);
-        ele.addEventListener('mouseleave', handleMouseLeave);
+        ele.addEventListener('mouseenter', playAnimation);
+        ele.addEventListener('mouseleave', reverseAnimation);
       }
     });
   } else {

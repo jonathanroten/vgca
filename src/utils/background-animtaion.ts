@@ -22,17 +22,17 @@ export const initBackgroundAnimation = () => {
 
         backgroundAnimationTimeline.to(targetElement, { backgroundColor: newBackgroundColor });
 
-        const handleMouseEnter = () => {
+        const playAnimation = () => {
           backgroundAnimationTimeline.kill();
           backgroundAnimationTimeline.play();
         };
-        const handleMouseLeave = () => {
+        const reverseAnimation = () => {
           backgroundAnimationTimeline.kill();
           backgroundAnimationTimeline.reverse();
         };
 
-        ele.addEventListener('mouseenter', handleMouseEnter);
-        ele.addEventListener('mouseleave', handleMouseLeave);
+        ele.addEventListener('mouseenter', playAnimation);
+        ele.addEventListener('mouseleave', reverseAnimation);
       }
     });
   }

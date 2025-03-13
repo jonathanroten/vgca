@@ -3,7 +3,7 @@ import { Autoplay, EffectFade } from 'swiper/modules';
 
 export const initQuotesSwiper = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const swiper = new Swiper('.cms_quotes_wrap.swiper', {
+  const swiper = new Swiper('[data-swiper-element="quotes-instance"]', {
     modules: [Autoplay, EffectFade],
     effect: 'fade',
     fadeEffect: {
