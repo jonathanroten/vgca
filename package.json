@@ -1,13 +1,13 @@
 {
-  "name": "@finsweet/developer-starter",
+  "name": "@jonathanroten/vgca",
   "version": "0.0.0",
-  "description": "Developer starter template for Finsweet projects.",
-  "homepage": "https://github.com/finsweet/developer-starter#readme",
+  "description": "Created for Very Good Creative Agency.",
+  "homepage": "https://github.com/jonathanroten/vgca",
   "license": "ISC",
   "keywords": [],
   "author": {
-    "name": "Finsweet",
-    "url": "https://finsweet.com/"
+    "name": "Jonathan Roten",
+    "url": "https://jonathanroten.com/"
   },
   "repository": {
     "type": "git",
