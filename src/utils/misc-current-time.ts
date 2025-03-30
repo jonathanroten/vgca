@@ -26,7 +26,7 @@ export const initCurrentTime = () => {
   const formattedMinutes = String(minutes).padStart(2, '0');
 
   // Format: "Month Day, HH:MM AM/PM"
-  const formattedTime = `${month} ${day}, ${hours}:${formattedMinutes} ${meridiemType}`;
+  const formattedTime = `${month} ${day} — ${hours}:${formattedMinutes} ${meridiemType}`;
 
   const currentTimeElement = document.getElementById('current-time');
   if (currentTimeElement) {
