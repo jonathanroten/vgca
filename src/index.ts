@@ -6,7 +6,7 @@ import { initQuotesSwiper } from '$utils/swiper-quotes';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   initCurrentTime();
-  setInterval(initCurrentTime, 15000);
+  setInterval(initCurrentTime, 1000);
   initQuotesSwiper();
   initArticlesSwiper();
   initStickyPanels();
