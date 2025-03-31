@@ -3,20 +3,24 @@ export const initNavScroll = () => {
   if (!navComponent) return;
 
   let lastScrollPosition = window.scrollY;
-  console.error('test');
   window.addEventListener(
     'scroll',
     () => {
       const currentScrollPosition = window.scrollY;
-
-      if (currentScrollPosition - lastScrollPosition > 0) {
+      const addBackground = 'is-background-filled';
+      const isScrolled = currentScrollPosition - lastScrollPosition > 0;
+      if (isScrolled) {
         navComponent?.classList.add('is-hidden');
-        if (navComponent?.classList.contains('is-background-filled')) {
-          navComponent?.classList.remove('is-background-filled');
+        if (navComponent?.classList.contains(addBackground)) {
+          navComponent?.classList.remove(addBackground);
         }
       } else {
         navComponent?.classList.remove('is-hidden');
         navComponent?.classList.add('is-background-filled');
+      }
+
+      if (currentScrollPosition === 0 && navComponent?.classList.contains(addBackground)) {
+        navComponent?.classList.remove(addBackground);
       }
 
       lastScrollPosition = currentScrollPosition;
