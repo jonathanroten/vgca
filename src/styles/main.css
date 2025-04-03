@@ -14,3 +14,8 @@
 [data-swiper-element="convo-instance"] .swiper-wrapper {
         transition-timing-function: linear !important;
 }
+
+/* FEATURED PROJECTS */
+[data-animation-element="featured-project"] {
+    will-change: transform;
+  }
