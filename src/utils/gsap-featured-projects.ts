@@ -6,24 +6,20 @@ gsap.registerPlugin(ScrollTrigger);
 export const initFeaturedProjects = () => {
   const featuredProjects = document.querySelectorAll('[data-animation-element="featured-project"]');
 
-  featuredProjects?.forEach((prjoect) => {
+  featuredProjects?.forEach((project) => {
     const featuredProjectAnimation = gsap.timeline({
       scrollTrigger: {
-        markers: true,
-        trigger: prjoect,
+        trigger: project,
         start: 'top top',
+        end: 'bottom top',
         scrub: true,
-        anticipatePin: 1,
       },
     });
 
-    featuredProjectAnimation.to(
-      prjoect,
-      {
-        ease: 'none',
-        scale: 0.9,
-      },
-      '<'
-    );
+    featuredProjectAnimation.to(project, {
+      scale: 0.9,
+      autoAlpha: 0,
+      ease: 'none',
+    });
   });
 };
