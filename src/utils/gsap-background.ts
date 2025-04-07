@@ -8,6 +8,14 @@ export const initBackgroundAnimation = () => {
   ) as HTMLElement;
 
   if (!isTouchDevice && targetElement && sourceElements.length > 0) {
+    let defaultBackgroundColor = window.getComputedStyle(targetElement).backgroundColor;
+    const rgbToHex = (color: string) => {
+      const match = color.match(/\d+/g);
+      const result = match ? match.map(Number) : [];
+      return '#' + result.map((x) => x.toString(16).padStart(2, '0')).join('');
+    };
+    defaultBackgroundColor = rgbToHex(defaultBackgroundColor);
+
     sourceElements.forEach((ele) => {
       const projectEmbed = ele.querySelector('[data-background-color]') as HTMLElement;
       const newBackgroundColor = projectEmbed.getAttribute('data-background-color') || undefined;
@@ -16,11 +24,15 @@ export const initBackgroundAnimation = () => {
         const backgroundAnimationTimeline = gsap.timeline({
           paused: true,
           duration: 0.2,
-          ease: 'power1.inOut',
           delay: 0.2,
+          ease: 'power1.inOut',
         });
 
-        backgroundAnimationTimeline.to(targetElement, { backgroundColor: newBackgroundColor });
+        backgroundAnimationTimeline.fromTo(
+          targetElement,
+          { backgroundColor: defaultBackgroundColor },
+          { backgroundColor: newBackgroundColor }
+        );
 
         const playAnimation = () => {
           backgroundAnimationTimeline.kill();

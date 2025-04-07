@@ -7,11 +7,14 @@ export const initCardAnimation = () => {
     cardElements.forEach((ele) => {
       const textElement = ele.querySelector('[data-animation-element="text"]') as HTMLElement;
       const titleElement = ele.querySelector('[data-animation-element="title"]') as HTMLElement;
-      const visualElement = ele.querySelector(
-        '[data-animation-element="visual"] img'
+      const mainVisualElement = ele.querySelector(
+        '[data-animation-element="visual-1"] img'
+      ) as HTMLElement;
+      const altVisualElement = ele.querySelector(
+        '[data-animation-element="visual-2"] img'
       ) as HTMLElement;
 
-      if (textElement && titleElement && visualElement) {
+      if (textElement && titleElement && mainVisualElement && altVisualElement) {
         const cardAnimationTimeline = gsap.timeline({
           paused: true,
           defaults: {
@@ -21,13 +24,15 @@ export const initCardAnimation = () => {
         });
 
         gsap.set(titleElement, { y: '2rem' });
-        gsap.set(textElement, { opacity: 0, y: '1rem' });
-        gsap.set(visualElement, { transform: 'scale(1)' });
+        gsap.set(textElement, { autoAlpha: 0, y: '1rem' });
+        gsap.set(mainVisualElement, { transform: 'scale(1)' });
+        gsap.set(altVisualElement, { transform: 'scale(1)' });
 
         cardAnimationTimeline
           .to(titleElement, { y: 0 })
-          .to(textElement, { opacity: 1, y: 0 }, '<')
-          .to(visualElement, { transform: 'scale(1.03)' }, '<');
+          .to(textElement, { autoAlpha: 1, y: 0 }, '<')
+          .to(mainVisualElement, { transform: 'scale(1.03)', autoAlpha: 0 }, '<')
+          .to(altVisualElement, { transform: 'scale(1.03)', autoAlpha: 1 }, '<');
 
         const playAnimation = () => cardAnimationTimeline.play();
         const reverseAnimation = () => cardAnimationTimeline.reverse();
