@@ -23,15 +23,15 @@ export const initBackgroundAnimation = () => {
       if (projectEmbed && newBackgroundColor) {
         const backgroundAnimationTimeline = gsap.timeline({
           paused: true,
-          duration: 0.2,
-          delay: 0.2,
+          duration: 0.4,
           ease: 'power1.inOut',
         });
 
         backgroundAnimationTimeline.fromTo(
           targetElement,
           { backgroundColor: defaultBackgroundColor },
-          { backgroundColor: newBackgroundColor }
+          { backgroundColor: newBackgroundColor },
+          '<'
         );
 
         const playAnimation = () => {
