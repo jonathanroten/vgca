@@ -14,7 +14,7 @@ export const initCardAnimation = () => {
         '[data-animation-element="visual-2"] img'
       ) as HTMLElement;
 
-      if (textElement && titleElement && mainVisualElement && altVisualElement) {
+      if (textElement && titleElement && mainVisualElement) {
         const cardAnimationTimeline = gsap.timeline({
           paused: true,
           defaults: {
@@ -26,22 +26,37 @@ export const initCardAnimation = () => {
         gsap.set(titleElement, { y: '2rem' });
         gsap.set(textElement, { autoAlpha: 0, y: '1rem' });
         gsap.set(mainVisualElement, { transform: 'scale(1)' });
-        gsap.set(altVisualElement, { transform: 'scale(1)' });
+        if (altVisualElement) {
+          gsap.set(altVisualElement, { transform: 'scale(1)' });
+        }
 
         cardAnimationTimeline
           .to(titleElement, { y: 0 })
           .to(textElement, { autoAlpha: 1, y: 0 }, '<')
-          .to(mainVisualElement, { transform: 'scale(1.03)', autoAlpha: 0 }, '<')
-          .to(altVisualElement, { transform: 'scale(1.03)', autoAlpha: 1 }, '<');
+          .to(
+            mainVisualElement,
+            { transform: 'scale(1.03)', autoAlpha: altVisualElement ? 0 : 1 },
+            '<'
+          );
+
+        if (altVisualElement) {
+          cardAnimationTimeline.to(
+            altVisualElement,
+            { transform: 'scale(1.03)', autoAlpha: 1 },
+            '<'
+          );
+        }
 
         const playAnimation = () => cardAnimationTimeline.play();
         const reverseAnimation = () => cardAnimationTimeline.reverse();
 
         ele.addEventListener('mouseenter', playAnimation);
         ele.addEventListener('mouseleave', reverseAnimation);
+      } else {
+        console.error('Missing required elements for card animation');
       }
     });
   } else {
-    console.error('Card animation disabled');
+    console.error('Touch Device: Card animation disabled');
   }
 };
