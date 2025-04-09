@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.1.1
+
+### Patch Changes
+
+- 328e10d: fixed issue related to gsap-card.ts – project cards have an alt image while article cards do not.
+
 ## 1.1.0
 
 ### Minor Changes
