@@ -52,7 +52,6 @@ export const initNavScroll = () => {
     const isScrollingUp = currentScroll < lastScroll;
     const nearTop = currentScroll <= scrollThreshold;
 
-    // Ensure background reflects scroll position even if nav is already visible
     if (navVisible) {
       navComponent.classList.toggle(addBackground, !nearTop);
     }
