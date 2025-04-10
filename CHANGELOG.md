@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.1.3
+
+### Patch Changes
+
+- 39402c3: Updated breakpoints spaceBetween in swiper to account for mobile layout changes. Sticky position in gsap-sticky is removed and now handled in css.
+
 ## 1.1.2
 
 ### Patch Changes
