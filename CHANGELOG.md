@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.1.2
+
+### Patch Changes
+
+- 1ba806f: Added breakpoints for swiper. Added gsap-sticky to projects-template.
+
 ## 1.1.1
 
 ### Patch Changes
