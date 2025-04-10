@@ -5,12 +5,20 @@ export const initArticlesSwiper = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const swiper = new Swiper('[data-swiper-element="articles-instance"]', {
     modules: [Navigation],
-    slidesPerView: 3,
     spaceBetween: 16,
+    slidesPerView: 1,
     speed: 300,
     navigation: {
       nextEl: '[data-swiper-element="next"]',
       prevEl: '[data-swiper-element="prev"]',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
     },
   });
 };
