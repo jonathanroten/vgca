@@ -6,7 +6,7 @@ export const initWorkSwiper = () => {
   const swiper = new Swiper('[data-swiper-element="related-work-instance"]', {
     modules: [Navigation],
     slidesPerView: 1,
-    spaceBetween: 24,
+    spaceBetween: 16,
     speed: 500,
     navigation: {
       nextEl: '[data-swiper-element="next"]',
@@ -15,6 +15,7 @@ export const initWorkSwiper = () => {
     breakpoints: {
       768: {
         slidesPerView: 2,
+        spaceBetween: 24,
       },
     },
   });
