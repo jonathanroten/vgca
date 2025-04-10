@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.2.0
+
+### Minor Changes
+
+- 3e507c8: Updated nav feature to incorporate GSAP ScrollTrigger
+
 ## 1.1.4
 
 ### Patch Changes
