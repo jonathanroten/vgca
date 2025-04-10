@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.1.4
+
+### Patch Changes
+
+- f77cf5c: Added media query to gsap-stick making animation for desktop only
+
 ## 1.1.3
 
 ### Patch Changes
