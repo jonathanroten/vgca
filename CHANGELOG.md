@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.3.0
+
+### Minor Changes
+
+- 1c57fd1: Added misc-layout-sort.ts to auto sort the page layout based on CMS settings.
+
 ## 1.2.0
 
 ### Minor Changes
