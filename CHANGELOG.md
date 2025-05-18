@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.3.1
+
+### Patch Changes
+
+- 52e9e05: Refactored GSAP Sticky Panels and Layout Sort to fix layout shift.
+
 ## 1.3.0
 
 ### Minor Changes
