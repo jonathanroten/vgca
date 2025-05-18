@@ -10,15 +10,15 @@ export const initStickyPanels = () => {
   mm.add('(min-width: 992px)', () => {
     if (stickyPanels.length > 0) {
       stickyPanels.forEach((panel) => {
-        const sickyPanelAnimation = gsap.timeline({
-          scrollTrigger: {
-            trigger: panel,
-            start: 'bottom -50%',
-            scrub: true,
-          },
+        ScrollTrigger.create({
+          trigger: panel,
+          start: 'top bottom',
+          end: 'bottom top',
+          onEnter: () => gsap.set(panel, { autoAlpha: 1 }),
+          onEnterBack: () => gsap.set(panel, { autoAlpha: 1 }),
+          onLeave: () => gsap.set(panel, { autoAlpha: 0 }),
+          onLeaveBack: () => gsap.set(panel, { autoAlpha: 0 }),
         });
-
-        sickyPanelAnimation.set(panel, { opacity: 1 }).to(panel, { opacity: 0, duration: 0.1 });
       });
     }
   });
