@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.3.2
+
+### Patch Changes
+
+- 6210882: changed script order on project template
+
 ## 1.3.1
 
 ### Patch Changes
