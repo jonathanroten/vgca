@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.4.0
+
+### Minor Changes
+
+- 55d8452: added swiper feature to project template page and fixed a bug on the expertise swiper function.
+
 ## 1.3.2
 
 ### Patch Changes
