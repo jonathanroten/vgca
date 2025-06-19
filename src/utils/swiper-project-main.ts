@@ -1,8 +1,14 @@
 import Swiper from 'swiper';
-import { EffectCreative, Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
-export const initExpertiseSwiper = () => {
-  const swiperInstances = document.querySelectorAll('[data-swiper-element="expertise-instance"]');
+export const initProjectMainSwiper = () => {
+  const swiperInstances = document.querySelectorAll(
+    '[data-swiper-element="project-main-instance"]'
+  );
+
+  if (swiperInstances.length === 0) {
+    return;
+  }
 
   swiperInstances.forEach((instance, index) => {
     const instanceSwiper = instance.querySelector('.swiper');
@@ -19,27 +25,13 @@ export const initExpertiseSwiper = () => {
     }
 
     new Swiper(instanceSwiper as HTMLElement, {
-      modules: [Navigation, EffectCreative],
-      effect: 'creative',
-      grabCursor: true,
-      creativeEffect: {
-        prev: {
-          shadow: true,
-          origin: 'bottom right',
-          translate: ['4%', '4%', -3],
-        },
-        next: {
-          shadow: true,
-          origin: 'bottom right',
-          translate: ['2%', '2%', -2],
-        },
-      },
-      slidesPerView: 1,
-      speed: 500,
+      modules: [Navigation],
+
       navigation: {
-        nextEl: instanceNext,
         prevEl: instancePrev,
+        nextEl: instanceNext,
       },
+      speed: 500,
     });
   });
 };
