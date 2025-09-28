@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.5.0
+
+### Minor Changes
+
+- 40161a1: updated swiper-articles and swiper-related-works
+
 ## 1.4.0
 
 ### Minor Changes
