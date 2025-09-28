@@ -5,18 +5,25 @@ export const initWorkSwiper = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const swiper = new Swiper('[data-swiper-element="related-work-instance"]', {
     modules: [Navigation],
-    slidesPerView: 1,
-    spaceBetween: 16,
-    speed: 500,
+    slidesPerView: 'auto',
+    followFinger: true,
+    loopAdditionalSlides: 10,
+    freeMode: false,
+    slideToClickedSlide: true,
+    centeredSlides: false,
+    autoHeight: false,
+    speed: 300,
+    mousewheel: {
+      enabled: true,
+      forceToAxis: true,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
     navigation: {
       nextEl: '[data-swiper-element="next"]',
       prevEl: '[data-swiper-element="prev"]',
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 24,
-      },
     },
   });
 };
