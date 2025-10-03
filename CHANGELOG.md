@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.6.1
+
+### Patch Changes
+
+- eab4552: completely removed gsap-sticky
+
 ## 1.6.0
 
 ### Minor Changes
