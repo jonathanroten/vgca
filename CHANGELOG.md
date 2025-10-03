@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.6.0
+
+### Minor Changes
+
+- 784dfbf: Removed gsap-sticky
+
 ## 1.5.0
 
 ### Minor Changes
