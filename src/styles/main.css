@@ -4,18 +4,3 @@
 @import "swiper/css/effect-creative";
 @import "swiper/css/autoplay";
 
-/* SWIPER */
-.swiper-button-disabled {
-    color: color-mix(in srgb, var(--_theme---text) 60%, transparent) !important;
-    
-}
-
-/* CONVO SWIPER */
-[data-swiper-element="convo-instance"] .swiper-wrapper {
-        transition-timing-function: linear !important;
-}
-
-/* FEATURED PROJECTS */
-[data-animation-element="featured-project"] {
-    will-change: transform;
-  }
