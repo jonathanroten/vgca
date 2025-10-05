@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.7.0
+
+### Minor Changes
+
+- a58d1a4: CSS is now in Webflow
+
 ## 1.6.1
 
 ### Patch Changes
