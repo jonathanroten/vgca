@@ -1,5 +1,15 @@
 # @vgca/production
 
+## 1.8.0
+
+### Minor Changes
+
+- 2d57fbf: consolidate article swiper and related-work swiper into main swiper. Renamed project main swiper to just project swiper.
+
+### Patch Changes
+
+- b359c45: update swiper-main
+
 ## 1.7.0
 
 ### Minor Changes
