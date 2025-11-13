@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
-export const initArticlesSwiper = () => {
+export const initMainSwiper = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const swiper = new Swiper('[data-swiper-element="main-instance"]', {
     modules: [Navigation],
