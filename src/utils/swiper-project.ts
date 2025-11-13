@@ -1,10 +1,8 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
-export const initProjectMainSwiper = () => {
-  const swiperInstances = document.querySelectorAll(
-    '[data-swiper-element="project-main-instance"]'
-  );
+export const initProjectSwiper = () => {
+  const swiperInstances = document.querySelectorAll('[data-swiper-element="project-instance"]');
 
   if (swiperInstances.length === 0) {
     return;

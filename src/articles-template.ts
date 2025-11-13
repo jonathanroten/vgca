@@ -1,8 +1,7 @@
 import { initReadTime } from '$utils/misc-read-time';
-import { initArticlesSwiper } from '$utils/swiper-articles';
-
+import { initMainSwiper } from '$utils/swiper-main';
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  initArticlesSwiper();
+  initMainSwiper();
   initReadTime();
 });

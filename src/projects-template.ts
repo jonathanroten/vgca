@@ -1,10 +1,10 @@
 import { initLayoutSort } from '$utils/misc-layout-sort';
-import { initProjectMainSwiper } from '$utils/swiper-project-main';
-import { initWorkSwiper } from '$utils/swiper-related-work';
+import { initMainSwiper } from '$utils/swiper-main';
+import { initProjectSwiper } from '$utils/swiper-project';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  initProjectMainSwiper();
+  initProjectSwiper();
   initLayoutSort();
-  initWorkSwiper();
+  initMainSwiper();
 });

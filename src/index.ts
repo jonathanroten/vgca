@@ -1,5 +1,5 @@
 import { initCurrentTime } from '$utils/misc-current-time';
-import { initArticlesSwiper } from '$utils/swiper-articles';
+import { initMainSwiper } from '$utils/swiper-main';
 import { initQuotesSwiper } from '$utils/swiper-quotes';
 
 window.Webflow ||= [];
@@ -7,5 +7,5 @@ window.Webflow.push(() => {
   initCurrentTime();
   setInterval(initCurrentTime, 1000);
   initQuotesSwiper();
-  initArticlesSwiper();
+  initMainSwiper();
 });
