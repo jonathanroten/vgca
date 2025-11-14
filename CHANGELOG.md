@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.9.1
+
+### Patch Changes
+
+- bd7030e: added contact.ts to entry points
+
 ## 1.9.0
 
 ### Minor Changes
