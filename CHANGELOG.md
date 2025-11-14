@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.9.0
+
+### Minor Changes
+
+- 470e921: Added formatting to contact form
+
 ## 1.8.0
 
 ### Minor Changes
