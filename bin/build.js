@@ -17,6 +17,7 @@ const ENTRY_POINTS = [
   'src/articles-template.ts',
   'src/projects-template.ts',
   'src/contact.ts',
+  'src/brand-clarity.ts',
   'src/styles/main.css',
 ];
 
