@@ -1,5 +1,12 @@
 # @vgca/production
 
+## 1.11.0
+
+### Minor Changes
+
+- a1cc46f: Added form logic to brand clarity
+- 21fe7fc: added form locgic to BRAND CLAIRTY
+
 ## 1.10.0
 
 ### Minor Changes
