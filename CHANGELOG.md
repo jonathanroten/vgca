@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.10.0
+
+### Minor Changes
+
+- bf1c6f1: added brand clarity form logic.
+
 ## 1.9.1
 
 ### Patch Changes
