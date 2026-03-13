@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.10.0
+
+### Minor Changes
+
+- 021aa5f: added form logic on brand clarity page
+
 ## 1.9.1
 
 ### Patch Changes
