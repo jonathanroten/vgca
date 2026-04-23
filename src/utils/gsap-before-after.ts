@@ -21,9 +21,7 @@ export const initBeforeAfterAnimation = () => {
       snapCenterZone: 5,
     });
     /* ── SETUP ─────────────────────────────────────────── */
-    gsap.registerPlugin(Draggable);
-    const hasInertia = typeof InertiaPlugin !== 'undefined';
-    if (hasInertia) gsap.registerPlugin(InertiaPlugin);
+    gsap.registerPlugin(Draggable, InertiaPlugin);
     /* ── SLIDER ────────────────────────────────────────── */
     const initSlider = (el: HTMLElement) => {
       const afterWrap = el.querySelector<HTMLElement>('.visual_after_wrap');
@@ -80,7 +78,7 @@ export const initBeforeAfterAnimation = () => {
             onRelease();
           },
         };
-        if (CONFIG.inertia && hasInertia) {
+        if (CONFIG.inertia) {
           Object.assign(cfg, {
             inertia: true,
             velocityMultiplier: CONFIG.velocityMultiplier,
