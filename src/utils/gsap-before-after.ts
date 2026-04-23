@@ -3,9 +3,7 @@ import { Draggable } from 'gsap/Draggable';
 import { InertiaPlugin } from 'gsap/InertiaPlugin';
 
 export const initBeforeAfterAnimation = () => {
-  document.querySelectorAll<HTMLElement>('.card_before-after_wrap').forEach((element) => {
-    if (element.dataset.scriptInitialized) return;
-    element.dataset.scriptInitialized = 'true';
+  document.querySelectorAll<HTMLElement>('.card_before-after_wrap').forEach(() => {
     /* ── CONFIG ────────────────────────────────────────── */
     const CONFIG = Object.freeze({
       startPct: 50,
@@ -90,7 +88,7 @@ export const initBeforeAfterAnimation = () => {
         draggable = Draggable.create(handle, cfg);
       };
       const place = (p: number) => {
-        gsap.set(handle, { x: pctToX(p), xPercent: -50, yPercent: -50 });
+        gsap.set(handle, { x: pctToX(p), yPercent: -50 });
         reveal(p);
       };
       // ResizeObserver handles both initial placement and resize.
@@ -100,8 +98,8 @@ export const initBeforeAfterAnimation = () => {
       let initialized = false;
       const ro = new ResizeObserver(() => {
         if (!el.offsetWidth) return;
-        build();
         place(initialized ? currentPct : CONFIG.startPct);
+        build();
         initialized = true;
       });
       ro.observe(el);
