@@ -90,7 +90,7 @@ export const initBeforeAfterAnimation = () => {
         draggable = Draggable.create(handle, cfg);
       };
       const place = (p: number) => {
-        gsap.set(handle, { x: pctToX(p), y: 0 });
+        gsap.set(handle, { x: pctToX(p), yPercent: -50 });
         reveal(p);
       };
       // ResizeObserver handles both initial placement and resize.
