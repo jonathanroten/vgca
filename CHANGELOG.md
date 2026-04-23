@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.12.0
+
+### Minor Changes
+
+- 3046efc: created gsap-before-after.ts and made minor updates to swiper-form.ts
+
 ## 1.11.1
 
 ### Patch Changes
