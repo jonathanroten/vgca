@@ -88,7 +88,7 @@ export const initBeforeAfterAnimation = () => {
         draggable = Draggable.create(handle, cfg);
       };
       const place = (p: number) => {
-        gsap.set(handle, { x: pctToX(p), yPercent: -50 });
+        gsap.set(handle, { x: pctToX(p), xPercent: -50, y: 0, yPercent: -50 });
         reveal(p);
       };
       // ResizeObserver handles both initial placement and resize.
@@ -98,8 +98,8 @@ export const initBeforeAfterAnimation = () => {
       let initialized = false;
       const ro = new ResizeObserver(() => {
         if (!el.offsetWidth) return;
-        place(initialized ? currentPct : CONFIG.startPct);
         build();
+        place(initialized ? currentPct : CONFIG.startPct);
         initialized = true;
       });
       ro.observe(el);
