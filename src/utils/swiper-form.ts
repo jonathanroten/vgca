@@ -106,7 +106,7 @@ export const initFormSwiper = () => {
     const swiper = new Swiper(instance as HTMLElement, {
       modules: [Navigation, ...(paginationEl ? [Pagination] : [])],
       slidesPerView: 1,
-      followFinger: true,
+      allowTouchMove: false,
       speed: 300,
       navigation: { nextEl: nextBtn, prevEl: prevBtn },
       pagination: paginationEl ? { el: paginationEl, clickable: false } : false,
