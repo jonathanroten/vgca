@@ -52,11 +52,7 @@ export const initCardAnimation = () => {
 
         ele.addEventListener('mouseenter', playAnimation);
         ele.addEventListener('mouseleave', reverseAnimation);
-      } else {
-        console.error('Missing required elements for card animation');
       }
     });
-  } else {
-    console.error('Touch Device: Card animation disabled');
   }
 };
