@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.12.1
+
+### Patch Changes
+
+- fce6472: updated gsap-cards.ts to remove console.logs
+
 ## 1.12.0
 
 ### Minor Changes
