@@ -31,7 +31,7 @@ export const initBeforeAfterAnimation = () => {
     // Convert % to GSAP x offset (handle is anchored at left:50%)
     const pctToX = (p: number) => (p / 100) * containerWidth - containerWidth / 2;
     // Read handle position back as % using GSAP's tracked value — no forced reflow
-    const readPct = () => (((gsap.getProperty(handle!, 'x') as number) / containerWidth + 0.5) * 100);
+    const readPct = () => ((gsap.getProperty(handle!, 'x') as number) / containerWidth + 0.5) * 100;
     const reveal = (p: number) => {
       currentPct = gsap.utils.clamp(0, 100, p);
       afterWrap!.style.clipPath = `inset(0 ${100 - currentPct}% 0 0)`;
