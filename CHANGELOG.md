@@ -1,5 +1,11 @@
 # @vgca/production
 
+## 1.12.2
+
+### Patch Changes
+
+- f6f7d30: reduce mobile freeze
+
 ## 1.12.1
 
 ### Patch Changes
