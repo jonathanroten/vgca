@@ -29,3 +29,6 @@ typings/
 
 # Production files
 dist
+
+# Claude Code local settings (per-developer, not shared)
+.claude/settings.local.json
